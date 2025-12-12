@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-js-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-js-app
+  template:
+    metadata:
+      labels:
+        app: node-js-app
+    spec:
+      containers:
+        - name: node-js-app
+          image: docker.io/library/node-js-app:latest # Use your Docker Hub image: <username>/<repo>:tag
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000

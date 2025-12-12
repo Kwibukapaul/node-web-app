@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-js-app
-          image: docker.io/library/node-js-app:latest
+          image: docker.io/library/node-js-app:latest # Use your Docker Hub image: <username>/<repo>:tag
           imagePullPolicy: Never
           ports:
-            - containerPort: 3000
+            - containerPort: 3000
